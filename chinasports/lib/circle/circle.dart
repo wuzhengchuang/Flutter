@@ -4,7 +4,13 @@ class CirclePage extends StatefulWidget {
   _CirclePageState createState() => _CirclePageState();
 }
 
-class _CirclePageState extends State<CirclePage> {
+class _CirclePageState extends State<CirclePage> with AutomaticKeepAliveClientMixin{
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('体育圈保持了页面状态');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,5 +19,10 @@ class _CirclePageState extends State<CirclePage> {
         elevation: 0,
       ),
     );
+  }
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive {
+    return true;
   }
 }

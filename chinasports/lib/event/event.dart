@@ -4,7 +4,13 @@ class EventPage extends StatefulWidget {
   _EventPageState createState() => _EventPageState();
 }
 
-class _EventPageState extends State<EventPage> {
+class _EventPageState extends State<EventPage> with AutomaticKeepAliveClientMixin{
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('赛事保持了页面状态');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,5 +19,10 @@ class _EventPageState extends State<EventPage> {
         elevation: 0,
       ),
     );
+  }
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive {
+    return true;
   }
 }

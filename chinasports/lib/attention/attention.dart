@@ -4,7 +4,13 @@ class AttentionPage extends StatefulWidget {
   _AttentionPageState createState() => _AttentionPageState();
 }
 
-class _AttentionPageState extends State<AttentionPage> {
+class _AttentionPageState extends State<AttentionPage> with AutomaticKeepAliveClientMixin{
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('关注保持了页面状态');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,5 +19,10 @@ class _AttentionPageState extends State<AttentionPage> {
         elevation: 0,
       ),
     );
+  }
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive {
+    return true;
   }
 }
