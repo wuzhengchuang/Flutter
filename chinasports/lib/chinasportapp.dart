@@ -1,4 +1,6 @@
 import 'package:chinasports/base/base.dart';
+import 'package:chinasports/home/home.dart';
+import 'package:chinasports/home/room.dart';
 import 'package:chinasports/properties/cscolor.dart';
 import 'package:flutter/material.dart';
 class ChinaSportsApp extends StatelessWidget {
@@ -11,6 +13,10 @@ class ChinaSportsApp extends StatelessWidget {
         highlightColor: Colors.transparent,
       ),
       home: BasePage(),
+      routes: {
+        '/':(context)=>HomePage(),
+        '/room':(context)=>RoomPage(),
+      },
     );
   }
 }

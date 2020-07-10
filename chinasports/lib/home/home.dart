@@ -1,3 +1,4 @@
+import 'package:chinasports/home/room.dart';
 import 'package:chinasports/model/message.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,14 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
       body: Container(
         child: Column(
           children: <Widget>[
+            FlatButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(fullscreenDialog: false,builder: (context){
+                return RoomPage(resultFunction: (result){
+                  print(result);
+                },);
+              }));
+            },
+                child: Text('跳转直播间')),
             FlatButton(onPressed: (){
              Message message = Provider.of<Message>(context,listen: false);
              message.home++;
