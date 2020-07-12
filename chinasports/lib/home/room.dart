@@ -38,7 +38,9 @@ class _RoomPageState extends State<RoomPage> with AutomaticKeepAliveClientMixin{
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    widget.resultFunction('直播间页面销毁了');
+    if(widget.resultFunction!=null){
+      widget.resultFunction('直播间页面销毁了');
+    }
   }
   @override
   // TODO: implement wantKeepAlive
